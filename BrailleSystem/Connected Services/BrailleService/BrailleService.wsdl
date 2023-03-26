@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetBrailleDotsForShape">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shape" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBrailleDotsForShapeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBrailleDotsForShapeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBrailleDotsForShapeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBrailleDotsForShape" />
+  </wsdl:message>
+  <wsdl:message name="GetBrailleDotsForShapeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBrailleDotsForShapeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BrailleServiceSoap">
+    <wsdl:operation name="GetBrailleDotsForShape">
+      <wsdl:input message="tns:GetBrailleDotsForShapeSoapIn" />
+      <wsdl:output message="tns:GetBrailleDotsForShapeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BrailleServiceSoap" type="tns:BrailleServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBrailleDotsForShape">
+      <soap:operation soapAction="http://tempuri.org/GetBrailleDotsForShape" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BrailleServiceSoap12" type="tns:BrailleServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBrailleDotsForShape">
+      <soap12:operation soapAction="http://tempuri.org/GetBrailleDotsForShape" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BrailleService">
+    <wsdl:port name="BrailleServiceSoap" binding="tns:BrailleServiceSoap">
+      <soap:address location="https://localhost:44335/BrailleService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BrailleServiceSoap12" binding="tns:BrailleServiceSoap12">
+      <soap12:address location="https://localhost:44335/BrailleService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
