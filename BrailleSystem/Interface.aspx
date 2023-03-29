@@ -73,6 +73,12 @@
             Width:411px;
             margin-left: 329px; 
         }
+        .Label4{
+            
+            font-weight:300;
+            
+        }
+        
    </style>
     <script>
         function drawShapeInBraille() {
@@ -149,6 +155,10 @@
                         </asp:Panel>
                     </asp:Panel>
                     <asp:Panel ID="Panel4" runat="server" CssClass="panel4">
+                        
+                        <asp:Label ID="Label4" runat="server" Text="">
+                            
+                        </asp:Label>
                     </asp:Panel>
                     <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
