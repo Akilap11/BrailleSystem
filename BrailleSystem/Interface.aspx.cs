@@ -62,14 +62,20 @@ namespace BrailleSystem
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //create object from braille service
+            // get parameters fromthe form and pass them to the web service
+            string shape = DropDownList1.Text;
+            string unit = DropDownList2.Text;
+            string unit2 = DropDownList3.Text;
+            string hight = TextBox1.Text;
+            string width = TextBox2.Text;
+            // call the web service
             BrailleService.BrailleService brailleService = new BrailleService.BrailleService();
-            //get the braille dots for the selected shape
-            string brailleDots = brailleService.GetBrailleDotsForShape(DropDownList1.Text);
-            //display the braille dots
-            Label4.Text = brailleDots;
-            
-            
+
+            string braille = brailleService.GetBrailleDotsForShape(shape, unit, unit2, hight, width);
+            // display the result
+            Label4.Text = braille;
+
+
         }
     }
 }

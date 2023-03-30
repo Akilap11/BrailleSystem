@@ -49,11 +49,23 @@ namespace BrailleSystem.BrailleService {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string shape;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string unit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public double value1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public double value2;
+        
         public GetBrailleDotsForShapeRequestBody() {
         }
         
-        public GetBrailleDotsForShapeRequestBody(string shape) {
+        public GetBrailleDotsForShapeRequestBody(string shape, string unit, double value1, double value2) {
             this.shape = shape;
+            this.unit = unit;
+            this.value1 = value1;
+            this.value2 = value2;
         }
     }
     
@@ -123,10 +135,13 @@ namespace BrailleSystem.BrailleService {
             return base.Channel.GetBrailleDotsForShape(request);
         }
         
-        public string GetBrailleDotsForShape(string shape) {
+        public string GetBrailleDotsForShape(string shape, string unit, double value1, double value2) {
             BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest inValue = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest();
             inValue.Body = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody();
             inValue.Body.shape = shape;
+            inValue.Body.unit = unit;
+            inValue.Body.value1 = value1;
+            inValue.Body.value2 = value2;
             BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleDotsForShape(inValue);
             return retVal.Body.GetBrailleDotsForShapeResult;
         }
@@ -136,10 +151,13 @@ namespace BrailleSystem.BrailleService {
             return base.Channel.GetBrailleDotsForShapeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse> GetBrailleDotsForShapeAsync(string shape) {
+        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse> GetBrailleDotsForShapeAsync(string shape, string unit, double value1, double value2) {
             BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest inValue = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest();
             inValue.Body = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody();
             inValue.Body.shape = shape;
+            inValue.Body.unit = unit;
+            inValue.Body.value1 = value1;
+            inValue.Body.value2 = value2;
             return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleDotsForShapeAsync(inValue);
         }
     }
