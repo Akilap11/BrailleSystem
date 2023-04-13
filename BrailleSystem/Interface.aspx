@@ -100,7 +100,7 @@
             }
 
             // Send the web service request
-            xmlhttp.open("GET", url, true);
+            xmlhttp.open("GET", https://localhost:44335/BrailleService.asmx?WSDL, true);
             xmlhttp.send();
         }
 
