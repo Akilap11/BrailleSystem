@@ -122,7 +122,7 @@
                         <asp:Panel ID="Panel3" runat="server" CssClass="panel3" Height="330px">
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Label ID="Label2" runat="server" Text="Select a Shaph"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="Select a Shape"></asp:Label>
                             <br />
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" BackColor="White" CssClass="dropdown" Font-Size="12pt" Height="25px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" style="margin-bottom: 7px" Width="210px">

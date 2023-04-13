@@ -20,7 +20,7 @@ namespace BrailleService
     {
 
         [WebMethod]
-        public string GetBrailleDotsForShape(string shape, string unit, double value1, double value2)
+        public string GetBrailleDotsForShape(string shape, string unit,string unit2, string hight, string width)
         {
             // Define a dictionary of shape names and their corresponding Braille representations
             Dictionary<string, string> shapesToBraille = new Dictionary<string, string>()

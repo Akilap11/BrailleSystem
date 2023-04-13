@@ -69,11 +69,11 @@ namespace BrailleSystem
             string hight = TextBox1.Text;
             string width = TextBox2.Text;
             // call the web service
-            BrailleService.BrailleService brailleService = new BrailleService.BrailleService();
+            BrailleService.BrailleServiceSoapClient brailleService = new BrailleService.BrailleServiceSoapClient();
 
             string braille = brailleService.GetBrailleDotsForShape(shape, unit, unit2, hight, width);
-            // display the result
-            Label4.Text = braille;
+            // display the results
+            Label4.Text = braille.ToString();
 
 
         }

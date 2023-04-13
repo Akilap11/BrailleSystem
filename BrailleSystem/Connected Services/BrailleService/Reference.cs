@@ -52,20 +52,24 @@ namespace BrailleSystem.BrailleService {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string unit;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public double value1;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string unit2;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public double value2;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string hight;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string width;
         
         public GetBrailleDotsForShapeRequestBody() {
         }
         
-        public GetBrailleDotsForShapeRequestBody(string shape, string unit, double value1, double value2) {
+        public GetBrailleDotsForShapeRequestBody(string shape, string unit, string unit2, string hight, string width) {
             this.shape = shape;
             this.unit = unit;
-            this.value1 = value1;
-            this.value2 = value2;
+            this.unit2 = unit2;
+            this.hight = hight;
+            this.width = width;
         }
     }
     
@@ -135,13 +139,14 @@ namespace BrailleSystem.BrailleService {
             return base.Channel.GetBrailleDotsForShape(request);
         }
         
-        public string GetBrailleDotsForShape(string shape, string unit, double value1, double value2) {
+        public string GetBrailleDotsForShape(string shape, string unit, string unit2, string hight, string width) {
             BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest inValue = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest();
             inValue.Body = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody();
             inValue.Body.shape = shape;
             inValue.Body.unit = unit;
-            inValue.Body.value1 = value1;
-            inValue.Body.value2 = value2;
+            inValue.Body.unit2 = unit2;
+            inValue.Body.hight = hight;
+            inValue.Body.width = width;
             BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleDotsForShape(inValue);
             return retVal.Body.GetBrailleDotsForShapeResult;
         }
@@ -151,13 +156,14 @@ namespace BrailleSystem.BrailleService {
             return base.Channel.GetBrailleDotsForShapeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse> GetBrailleDotsForShapeAsync(string shape, string unit, double value1, double value2) {
+        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse> GetBrailleDotsForShapeAsync(string shape, string unit, string unit2, string hight, string width) {
             BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest inValue = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest();
             inValue.Body = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody();
             inValue.Body.shape = shape;
             inValue.Body.unit = unit;
-            inValue.Body.value1 = value1;
-            inValue.Body.value2 = value2;
+            inValue.Body.unit2 = unit2;
+            inValue.Body.hight = hight;
+            inValue.Body.width = width;
             return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleDotsForShapeAsync(inValue);
         }
     }

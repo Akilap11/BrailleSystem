@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BrailleService"
   ],
-  "SelectedNode": "\\BrailleSystem.sln",
+  "SelectedNode": "\\BrailleService\\BrailleService.asmx.cs",
   "PreviewInSolutionExplorer": false
 }
