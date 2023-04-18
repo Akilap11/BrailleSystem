@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
@@ -20,8 +21,36 @@ namespace BrailleService
     {
 
         [WebMethod]
-        public string GetBrailleDotsForShape(string shape, string unit,string unit2, string hight, string width)
+        public string GetBrailleDotsForShape(string shape, string unit, string unit2, string hight, string width)
         {
+
+            int rectangle()
+            {
+                int a = Convert.ToInt32(unit);
+                int b = Convert.ToInt32(unit2);
+                int c = (a * b);
+                return c;
+
+            }
+            int triangle()
+            {
+                int a = Convert.ToInt32(unit);
+                int b = Convert.ToInt32(unit2);
+
+                int c = 1 / 2 * a * b;
+                return c; 
+            }
+
+            int circle()
+            {
+                int a = Convert.ToInt32(unit);
+
+                int c = 2 * 3 * a;
+
+                return c;
+
+            }
+            
             // Define a dictionary of shape names and their corresponding Braille representations
             Dictionary<string, string> shapesToBraille = new Dictionary<string, string>()
                 {
@@ -33,6 +62,9 @@ namespace BrailleService
             // Look up the corresponding Braille representation for the selected shape
             if (shapesToBraille.TryGetValue(shape, out string braille))
             {
+               
+                    
+
                 // Create a label control to display the Braille dots
                 System.Web.UI.WebControls.Label brailleLabel = new System.Web.UI.WebControls.Label();
 
