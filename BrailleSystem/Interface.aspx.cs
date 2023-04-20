@@ -78,19 +78,21 @@ namespace BrailleSystem
             {
                 double result = brailleService.CalculateCircleArea(Convert.ToDouble(hight));
                 Label4.Text = result.ToString();
-                //label8
+                Label8.Text = "Circle";
             }
 
             if (shape == "Triangle")
             {
                 double result = brailleService.CalculateTriangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
                 Label4.Text = result.ToString();
+                Label8.Text = "Triangle";
             }
 
             if (shape == "Rectangle")
             {
                 double result = brailleService.CalculateRectangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
                 Label4.Text = result.ToString();
+                Label8.Text = "Rectangle";
             }
 
 

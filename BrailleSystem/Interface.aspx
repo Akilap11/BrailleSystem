@@ -132,8 +132,15 @@
                     </asp:Panel>
                     <asp:Panel ID="Panel4" runat="server" CssClass="panel4">
                         
+                         <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+                        <br />
+                        <br />
+                        <br />
+                        
                         <asp:Label ID="Label4" runat="server" Font-Size="Large"></asp:Label>
+                       
                     </asp:Panel>
+                    
                     <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
                     <br />
