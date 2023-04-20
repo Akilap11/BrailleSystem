@@ -78,7 +78,7 @@ namespace BrailleSystem
             {
                 double result = brailleService.CalculateCircleArea(Convert.ToDouble(hight));
                 Label4.Text = result.ToString();
-               
+                //label8
             }
 
             if (shape == "Triangle")
