@@ -71,9 +71,19 @@ namespace BrailleSystem
             // call the web service
             BrailleService.BrailleServiceSoapClient brailleService = new BrailleService.BrailleServiceSoapClient();
 
-            string braille = brailleService.GetBrailleDotsForShape(shape, unit, unit2, hight, width);
-            // display the results
-            Label4.Text = braille.ToString();
+            string result = brailleService.Getshapevalues(shape, unit, unit2, hight, width);
+
+            //display values from web service
+
+            
+            Label4.Text = result;
+
+
+
+
+
+
+
 
 
         }

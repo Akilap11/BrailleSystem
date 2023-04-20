@@ -16,26 +16,26 @@ namespace BrailleSystem.BrailleService {
     public interface BrailleServiceSoap {
         
         // CODEGEN: Generating message contract since element name shape from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBrailleDotsForShape", ReplyAction="*")]
-        BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse GetBrailleDotsForShape(BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Getshapevalues", ReplyAction="*")]
+        BrailleSystem.BrailleService.GetshapevaluesResponse Getshapevalues(BrailleSystem.BrailleService.GetshapevaluesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBrailleDotsForShape", ReplyAction="*")]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse> GetBrailleDotsForShapeAsync(BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Getshapevalues", ReplyAction="*")]
+        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetshapevaluesResponse> GetshapevaluesAsync(BrailleSystem.BrailleService.GetshapevaluesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetBrailleDotsForShapeRequest {
+    public partial class GetshapevaluesRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBrailleDotsForShape", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Getshapevalues", Namespace="http://tempuri.org/", Order=0)]
+        public BrailleSystem.BrailleService.GetshapevaluesRequestBody Body;
         
-        public GetBrailleDotsForShapeRequest() {
+        public GetshapevaluesRequest() {
         }
         
-        public GetBrailleDotsForShapeRequest(BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody Body) {
+        public GetshapevaluesRequest(BrailleSystem.BrailleService.GetshapevaluesRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -44,7 +44,7 @@ namespace BrailleSystem.BrailleService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetBrailleDotsForShapeRequestBody {
+    public partial class GetshapevaluesRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string shape;
@@ -61,10 +61,10 @@ namespace BrailleSystem.BrailleService {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string width;
         
-        public GetBrailleDotsForShapeRequestBody() {
+        public GetshapevaluesRequestBody() {
         }
         
-        public GetBrailleDotsForShapeRequestBody(string shape, string unit, string unit2, string hight, string width) {
+        public GetshapevaluesRequestBody(string shape, string unit, string unit2, string hight, string width) {
             this.shape = shape;
             this.unit = unit;
             this.unit2 = unit2;
@@ -77,15 +77,15 @@ namespace BrailleSystem.BrailleService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetBrailleDotsForShapeResponse {
+    public partial class GetshapevaluesResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBrailleDotsForShapeResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.GetBrailleDotsForShapeResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetshapevaluesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BrailleSystem.BrailleService.GetshapevaluesResponseBody Body;
         
-        public GetBrailleDotsForShapeResponse() {
+        public GetshapevaluesResponse() {
         }
         
-        public GetBrailleDotsForShapeResponse(BrailleSystem.BrailleService.GetBrailleDotsForShapeResponseBody Body) {
+        public GetshapevaluesResponse(BrailleSystem.BrailleService.GetshapevaluesResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -94,16 +94,16 @@ namespace BrailleSystem.BrailleService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetBrailleDotsForShapeResponseBody {
+    public partial class GetshapevaluesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string GetBrailleDotsForShapeResult;
+        public string GetshapevaluesResult;
         
-        public GetBrailleDotsForShapeResponseBody() {
+        public GetshapevaluesResponseBody() {
         }
         
-        public GetBrailleDotsForShapeResponseBody(string GetBrailleDotsForShapeResult) {
-            this.GetBrailleDotsForShapeResult = GetBrailleDotsForShapeResult;
+        public GetshapevaluesResponseBody(string GetshapevaluesResult) {
+            this.GetshapevaluesResult = GetshapevaluesResult;
         }
     }
     
@@ -135,36 +135,36 @@ namespace BrailleSystem.BrailleService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse BrailleSystem.BrailleService.BrailleServiceSoap.GetBrailleDotsForShape(BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest request) {
-            return base.Channel.GetBrailleDotsForShape(request);
+        BrailleSystem.BrailleService.GetshapevaluesResponse BrailleSystem.BrailleService.BrailleServiceSoap.Getshapevalues(BrailleSystem.BrailleService.GetshapevaluesRequest request) {
+            return base.Channel.Getshapevalues(request);
         }
         
-        public string GetBrailleDotsForShape(string shape, string unit, string unit2, string hight, string width) {
-            BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest inValue = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest();
-            inValue.Body = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody();
+        public string Getshapevalues(string shape, string unit, string unit2, string hight, string width) {
+            BrailleSystem.BrailleService.GetshapevaluesRequest inValue = new BrailleSystem.BrailleService.GetshapevaluesRequest();
+            inValue.Body = new BrailleSystem.BrailleService.GetshapevaluesRequestBody();
             inValue.Body.shape = shape;
             inValue.Body.unit = unit;
             inValue.Body.unit2 = unit2;
             inValue.Body.hight = hight;
             inValue.Body.width = width;
-            BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleDotsForShape(inValue);
-            return retVal.Body.GetBrailleDotsForShapeResult;
+            BrailleSystem.BrailleService.GetshapevaluesResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).Getshapevalues(inValue);
+            return retVal.Body.GetshapevaluesResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse> BrailleSystem.BrailleService.BrailleServiceSoap.GetBrailleDotsForShapeAsync(BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest request) {
-            return base.Channel.GetBrailleDotsForShapeAsync(request);
+        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetshapevaluesResponse> BrailleSystem.BrailleService.BrailleServiceSoap.GetshapevaluesAsync(BrailleSystem.BrailleService.GetshapevaluesRequest request) {
+            return base.Channel.GetshapevaluesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleDotsForShapeResponse> GetBrailleDotsForShapeAsync(string shape, string unit, string unit2, string hight, string width) {
-            BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest inValue = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequest();
-            inValue.Body = new BrailleSystem.BrailleService.GetBrailleDotsForShapeRequestBody();
+        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetshapevaluesResponse> GetshapevaluesAsync(string shape, string unit, string unit2, string hight, string width) {
+            BrailleSystem.BrailleService.GetshapevaluesRequest inValue = new BrailleSystem.BrailleService.GetshapevaluesRequest();
+            inValue.Body = new BrailleSystem.BrailleService.GetshapevaluesRequestBody();
             inValue.Body.shape = shape;
             inValue.Body.unit = unit;
             inValue.Body.unit2 = unit2;
             inValue.Body.hight = hight;
             inValue.Body.width = width;
-            return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleDotsForShapeAsync(inValue);
+            return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetshapevaluesAsync(inValue);
         }
     }
 }

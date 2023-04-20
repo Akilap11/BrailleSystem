@@ -21,37 +21,61 @@ namespace BrailleService
     {
 
         [WebMethod]
-        public string GetBrailleDotsForShape(string shape, string unit, string unit2, string hight, string width)
+        public string Getshapevalues(string shape, string unit, string unit2, string hight, string width)
         {
-
+          
+            
             int rectangle()
             {
-                int a = Convert.ToInt32(unit);
-                int b = Convert.ToInt32(unit2);
+                int a = Convert.ToInt32(hight);
+                int b = Convert.ToInt32(width);
                 int c = (a * b);
+                Console.WriteLine(c);
                 return c;
 
             }
             int triangle()
             {
-                int a = Convert.ToInt32(unit);
-                int b = Convert.ToInt32(unit2);
+                int a = Convert.ToInt32(hight);
+                int b = Convert.ToInt32(width);
 
                 int c = 1 / 2 * a * b;
-                return c; 
+                Console.WriteLine(c);
+                return c;
+
+                
             }
 
             int circle()
             {
-                int a = Convert.ToInt32(unit);
+                int a = Convert.ToInt32(hight);
 
                 int c = 2 * 3 * a;
 
+                Console.WriteLine(c);
                 return c;
-
+                
             }
-            
-            // Define a dictionary of shape names and their corresponding Braille representations
+
+            if (shape == "circle")
+            {
+                Console.WriteLine("Circle INK values are: ");
+                circle();
+            }
+
+            if (shape == "triangle")
+            {
+                Console.WriteLine("Triangle INK values are: ");
+                triangle();
+            }
+
+            if (shape == "rectangle")
+            {
+                Console.WriteLine("Rectangle INK values are: ");
+                rectangle();
+            }
+
+            /*// Define a dictionary of shape names and their corresponding Braille representations
             Dictionary<string, string> shapesToBraille = new Dictionary<string, string>()
                 {
                     { "circle", "001111" },
@@ -88,7 +112,9 @@ namespace BrailleService
             {
                 // Return an error message if the selected shape is not supported
                 return "Error: Shape not supported.";
-            }
+            }*/
+            return shape;
+            
         }
     }
     
