@@ -24,6 +24,8 @@ namespace BrailleSystem
                 TextBox2.Visible = false;
                 DropDownList2.Visible = false;
                 DropDownList3.Visible = false;
+
+                
             }
             if (DropDownList1.Text == "Circle")
             {
@@ -34,6 +36,7 @@ namespace BrailleSystem
                 TextBox2.Visible = false;
                 DropDownList2.Visible = true;
                 DropDownList3.Visible = false;
+               
             }
             if (DropDownList1.Text == "Triangle") 
             {
@@ -44,7 +47,7 @@ namespace BrailleSystem
                 TextBox2.Visible = true;
                 DropDownList2.Visible = true;
                 DropDownList3.Visible = true;
-
+              
             }
             if (DropDownList1.Text == "Rectangle")
             {
@@ -56,24 +59,26 @@ namespace BrailleSystem
                 TextBox2.Visible = true;
                 DropDownList2.Visible = true;
                 DropDownList3.Visible = true;
+             
             }
         
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            // get parameters fromthe form and pass them to the web service
+            //get parameters fromthe form and pass them to the web service
             string shape = DropDownList1.Text;
             
             string hight = TextBox1.Text;
             string width = TextBox2.Text;
             // call the web service
             BrailleService.BrailleServiceSoapClient brailleService = new BrailleService.BrailleServiceSoapClient();
-
+            
             if (shape == "Circle")
             {
                 double result = brailleService.CalculateCircleArea(Convert.ToDouble(hight));
                 Label4.Text = result.ToString();
+               
             }
 
             if (shape == "Triangle")
