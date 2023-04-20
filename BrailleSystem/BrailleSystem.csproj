@@ -106,9 +106,6 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <None Include="Connected Services\BrailleService\BrailleService.disco" />
-    <Content Include="Connected Services\BrailleService\BrailleSystem.BrailleService.GetshapevaluesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\BrailleService\configuration91.svcinfo" />
     <None Include="Connected Services\BrailleService\configuration.svcinfo" />
     <None Include="Connected Services\BrailleService\Reference.svcmap">

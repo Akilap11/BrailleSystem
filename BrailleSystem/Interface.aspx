@@ -80,31 +80,7 @@
         }
         
    </style>
-    <script>
-        function drawShapeInBraille() {
-            // Get the selected shape from the dropdown list
-            var shape = document.getElementById("shape").value;
 
-            // Create a new XMLHttpRequest object to invoke the web service
-            var xmlhttp = new XMLHttpRequest();
-
-            // Define the URL for the web service
-            var url = "http://localhost:12345/BrailleService.asmx/DrawShapeInBraille?shape=" + shape;
-
-            // Define the callback function to handle the web service response
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    // Update the label control with the Braille dots
-                    document.getElementById("brailleLabel").innerHTML = xmlhttp.responseText;
-                }
-            }
-
-            // Send the web service request
-            xmlhttp.open("GET", https://localhost:44335/BrailleService.asmx?WSDL, true);
-            xmlhttp.send();
-        }
-
-    </script>
 </head>
 <body>
     <form runat="server" >

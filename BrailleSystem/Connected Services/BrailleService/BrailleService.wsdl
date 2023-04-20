@@ -2,42 +2,106 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="Getshapevalues">
+      <s:element name="CalculateRectangleArea">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="shape" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="unit" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="unit2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="hight" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="width" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:double" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetshapevaluesResponse">
+      <s:element name="CalculateRectangleAreaResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetshapevaluesResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateRectangleAreaResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateCircleArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="radius" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateCircleAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateCircleAreaResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTriangleArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="baseLength" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTriangleAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateTriangleAreaResult" type="s:double" />
           </s:sequence>
         </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="GetshapevaluesSoapIn">
-    <wsdl:part name="parameters" element="tns:Getshapevalues" />
+  <wsdl:message name="CalculateRectangleAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateRectangleArea" />
   </wsdl:message>
-  <wsdl:message name="GetshapevaluesSoapOut">
-    <wsdl:part name="parameters" element="tns:GetshapevaluesResponse" />
+  <wsdl:message name="CalculateRectangleAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateRectangleAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateCircleAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateCircleArea" />
+  </wsdl:message>
+  <wsdl:message name="CalculateCircleAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateCircleAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTriangleAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateTriangleArea" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTriangleAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateTriangleAreaResponse" />
   </wsdl:message>
   <wsdl:portType name="BrailleServiceSoap">
-    <wsdl:operation name="Getshapevalues">
-      <wsdl:input message="tns:GetshapevaluesSoapIn" />
-      <wsdl:output message="tns:GetshapevaluesSoapOut" />
+    <wsdl:operation name="CalculateRectangleArea">
+      <wsdl:input message="tns:CalculateRectangleAreaSoapIn" />
+      <wsdl:output message="tns:CalculateRectangleAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCircleArea">
+      <wsdl:input message="tns:CalculateCircleAreaSoapIn" />
+      <wsdl:output message="tns:CalculateCircleAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTriangleArea">
+      <wsdl:input message="tns:CalculateTriangleAreaSoapIn" />
+      <wsdl:output message="tns:CalculateTriangleAreaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BrailleServiceSoap" type="tns:BrailleServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Getshapevalues">
-      <soap:operation soapAction="http://tempuri.org/Getshapevalues" style="document" />
+    <wsdl:operation name="CalculateRectangleArea">
+      <soap:operation soapAction="http://tempuri.org/CalculateRectangleArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCircleArea">
+      <soap:operation soapAction="http://tempuri.org/CalculateCircleArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTriangleArea">
+      <soap:operation soapAction="http://tempuri.org/CalculateTriangleArea" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -48,8 +112,26 @@
   </wsdl:binding>
   <wsdl:binding name="BrailleServiceSoap12" type="tns:BrailleServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Getshapevalues">
-      <soap12:operation soapAction="http://tempuri.org/Getshapevalues" style="document" />
+    <wsdl:operation name="CalculateRectangleArea">
+      <soap12:operation soapAction="http://tempuri.org/CalculateRectangleArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCircleArea">
+      <soap12:operation soapAction="http://tempuri.org/CalculateCircleArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTriangleArea">
+      <soap12:operation soapAction="http://tempuri.org/CalculateTriangleArea" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -19,65 +19,26 @@ namespace BrailleService
     // [System.Web.Script.Services.ScriptService]
     public class BrailleService : System.Web.Services.WebService
     {
+        [WebMethod]
+        public double CalculateRectangleArea(double hight, double width)
+        {
+            Console.WriteLine("Hight: " + hight);
+            Console.WriteLine("Width: " + width);
+            return hight * width;
+        }
 
         [WebMethod]
-        public string Getshapevalues(string shape, string unit, string unit2, string hight, string width)
+        public double CalculateCircleArea(double radius)
         {
-          
-            
-            int rectangle()
-            {
-                int a = Convert.ToInt32(hight);
-                int b = Convert.ToInt32(width);
-                int c = (a * b);
-                Console.WriteLine(c);
-                return c;
+            Console.WriteLine("Radius: " + radius);
+            return Math.PI * radius * radius;
+        }
 
-            }
-            int triangle()
-            {
-                int a = Convert.ToInt32(hight);
-                int b = Convert.ToInt32(width);
-
-                int c = 1 / 2 * a * b;
-                Console.WriteLine(c);
-                return c;
-
-                
-            }
-
-            int circle()
-            {
-                int a = Convert.ToInt32(hight);
-
-                int c = 2 * 3 * a;
-
-                Console.WriteLine(c);
-                return c;
-                
-            }
-
-            if (shape == "circle")
-            {
-                Console.WriteLine("Circle INK values are: ");
-                circle();
-            }
-
-            if (shape == "triangle")
-            {
-                Console.WriteLine("Triangle INK values are: ");
-                triangle();
-            }
-
-            if (shape == "rectangle")
-            {
-                Console.WriteLine("Rectangle INK values are: ");
-                rectangle();
-            }
-
-         
-            return shape;
-            
+        [WebMethod]
+        public double CalculateTriangleArea(double baseLength, double height)
+        {
+            Console.WriteLine("Base Length: " + baseLength);
+            return 0.5 * baseLength * height;
         }
     }
     

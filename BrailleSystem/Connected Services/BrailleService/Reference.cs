@@ -15,96 +15,23 @@ namespace BrailleSystem.BrailleService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BrailleService.BrailleServiceSoap")]
     public interface BrailleServiceSoap {
         
-        // CODEGEN: Generating message contract since element name shape from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Getshapevalues", ReplyAction="*")]
-        BrailleSystem.BrailleService.GetshapevaluesResponse Getshapevalues(BrailleSystem.BrailleService.GetshapevaluesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateRectangleArea", ReplyAction="*")]
+        double CalculateRectangleArea(double hight, double width);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Getshapevalues", ReplyAction="*")]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetshapevaluesResponse> GetshapevaluesAsync(BrailleSystem.BrailleService.GetshapevaluesRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetshapevaluesRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateRectangleArea", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> CalculateRectangleAreaAsync(double hight, double width);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Getshapevalues", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.GetshapevaluesRequestBody Body;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateCircleArea", ReplyAction="*")]
+        double CalculateCircleArea(double radius);
         
-        public GetshapevaluesRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateCircleArea", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> CalculateCircleAreaAsync(double radius);
         
-        public GetshapevaluesRequest(BrailleSystem.BrailleService.GetshapevaluesRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetshapevaluesRequestBody {
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateTriangleArea", ReplyAction="*")]
+        double CalculateTriangleArea(double baseLength, double height);
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string shape;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string unit;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string unit2;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string hight;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string width;
-        
-        public GetshapevaluesRequestBody() {
-        }
-        
-        public GetshapevaluesRequestBody(string shape, string unit, string unit2, string hight, string width) {
-            this.shape = shape;
-            this.unit = unit;
-            this.unit2 = unit2;
-            this.hight = hight;
-            this.width = width;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetshapevaluesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetshapevaluesResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.GetshapevaluesResponseBody Body;
-        
-        public GetshapevaluesResponse() {
-        }
-        
-        public GetshapevaluesResponse(BrailleSystem.BrailleService.GetshapevaluesResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetshapevaluesResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string GetshapevaluesResult;
-        
-        public GetshapevaluesResponseBody() {
-        }
-        
-        public GetshapevaluesResponseBody(string GetshapevaluesResult) {
-            this.GetshapevaluesResult = GetshapevaluesResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateTriangleArea", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> CalculateTriangleAreaAsync(double baseLength, double height);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,37 +61,28 @@ namespace BrailleSystem.BrailleService {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BrailleSystem.BrailleService.GetshapevaluesResponse BrailleSystem.BrailleService.BrailleServiceSoap.Getshapevalues(BrailleSystem.BrailleService.GetshapevaluesRequest request) {
-            return base.Channel.Getshapevalues(request);
+        public double CalculateRectangleArea(double hight, double width) {
+            return base.Channel.CalculateRectangleArea(hight, width);
         }
         
-        public string Getshapevalues(string shape, string unit, string unit2, string hight, string width) {
-            BrailleSystem.BrailleService.GetshapevaluesRequest inValue = new BrailleSystem.BrailleService.GetshapevaluesRequest();
-            inValue.Body = new BrailleSystem.BrailleService.GetshapevaluesRequestBody();
-            inValue.Body.shape = shape;
-            inValue.Body.unit = unit;
-            inValue.Body.unit2 = unit2;
-            inValue.Body.hight = hight;
-            inValue.Body.width = width;
-            BrailleSystem.BrailleService.GetshapevaluesResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).Getshapevalues(inValue);
-            return retVal.Body.GetshapevaluesResult;
+        public System.Threading.Tasks.Task<double> CalculateRectangleAreaAsync(double hight, double width) {
+            return base.Channel.CalculateRectangleAreaAsync(hight, width);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetshapevaluesResponse> BrailleSystem.BrailleService.BrailleServiceSoap.GetshapevaluesAsync(BrailleSystem.BrailleService.GetshapevaluesRequest request) {
-            return base.Channel.GetshapevaluesAsync(request);
+        public double CalculateCircleArea(double radius) {
+            return base.Channel.CalculateCircleArea(radius);
         }
         
-        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetshapevaluesResponse> GetshapevaluesAsync(string shape, string unit, string unit2, string hight, string width) {
-            BrailleSystem.BrailleService.GetshapevaluesRequest inValue = new BrailleSystem.BrailleService.GetshapevaluesRequest();
-            inValue.Body = new BrailleSystem.BrailleService.GetshapevaluesRequestBody();
-            inValue.Body.shape = shape;
-            inValue.Body.unit = unit;
-            inValue.Body.unit2 = unit2;
-            inValue.Body.hight = hight;
-            inValue.Body.width = width;
-            return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetshapevaluesAsync(inValue);
+        public System.Threading.Tasks.Task<double> CalculateCircleAreaAsync(double radius) {
+            return base.Channel.CalculateCircleAreaAsync(radius);
+        }
+        
+        public double CalculateTriangleArea(double baseLength, double height) {
+            return base.Channel.CalculateTriangleArea(baseLength, height);
+        }
+        
+        public System.Threading.Tasks.Task<double> CalculateTriangleAreaAsync(double baseLength, double height) {
+            return base.Channel.CalculateTriangleAreaAsync(baseLength, height);
         }
     }
 }

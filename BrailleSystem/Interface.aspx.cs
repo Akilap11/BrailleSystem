@@ -64,19 +64,34 @@ namespace BrailleSystem
         {
             // get parameters fromthe form and pass them to the web service
             string shape = DropDownList1.Text;
-            string unit = DropDownList2.Text;
-            string unit2 = DropDownList3.Text;
+            
             string hight = TextBox1.Text;
             string width = TextBox2.Text;
             // call the web service
             BrailleService.BrailleServiceSoapClient brailleService = new BrailleService.BrailleServiceSoapClient();
 
-            string result = brailleService.Getshapevalues(shape, unit, unit2, hight, width);
+            if (shape == "Circle")
+            {
+                double result = brailleService.CalculateCircleArea(Convert.ToDouble(hight));
+                Label4.Text = result.ToString();
+            }
 
-            //display values from web service
+            if (shape == "Triangle")
+            {
+                double result = brailleService.CalculateTriangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
+                Label4.Text = result.ToString();
+            }
 
-            
-            Label4.Text = result;
+            if (shape == "Rectangle")
+            {
+                double result = brailleService.CalculateRectangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
+                Label4.Text = result.ToString();
+            }
+
+
+
+
+
 
 
 
