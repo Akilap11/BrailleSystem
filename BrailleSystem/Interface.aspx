@@ -11,12 +11,11 @@
        }
        .panel1{
            background-color:#7d7d7d;
-           Height:423px;
-           Width:750px;
            border-radius:4px;
            text-align:center;
-
-           style="margin-left: 21px; margin-top: 0px; margin-bottom: 21px"  Wrap="False"
+           margin-left: 0px;
+           margin-top: 0px;
+           margin-bottom: 0px;
        }
        .Sname{
            font-weight:300;
@@ -36,8 +35,8 @@
            margin-bottom: 0px;
            font-size:20px;
            border-radius:0px 0px 4px 4px;
-           margin-left: 10px;
-           margin-right: 427px;
+           margin-left: 8px;
+           margin-right: 636px;
            margin-top: 20px;
        }
        .button{
@@ -69,14 +68,22 @@
         .panel4{
             background-color:#c6c6c6b6;
             border-radius:0px 0px 4px 4px;
-            Height:330px;
-            Width:411px;
-            margin-left: 329px; 
-        }
+            margin-left: 509px;
+           margin-right: 118px;
+           margin-top: 0px;
+       }
         .Label4{
             
             font-weight:300;
             
+        }
+        .panel5{
+            background-color:#c6c6c6b6;
+            border-radius:4px 4px 4px 4px;
+        }
+        .Label8{
+            font-size:medium;
+            color:aliceblue;
         }
         
    </style>
@@ -85,17 +92,14 @@
 <body>
     <form runat="server" >
         <div class="form"> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Panel ID="Panel1" runat="server"  CssClass="panel1" >
+                <asp:Panel ID="Panel1" runat="server"  CssClass="panel1" Height="659px" Width="1130px" >
                     <asp:Panel ID="Panel2" runat="server" CssClass="panel2" >
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label1" runat="server" CssClass="Sname" Font-Overline="False" Text="Braille System"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <br />
-                        <asp:Panel ID="Panel3" runat="server" CssClass="panel3" Height="330px">
+                        <asp:Panel ID="Panel3" runat="server" CssClass="panel3" Height="335px" Width="497px">
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Label ID="Label2" runat="server" Text="Select a Shape"></asp:Label>
@@ -130,29 +134,20 @@
                             <asp:Button ID="Button1" runat="server" CssClass="button" Font-Bold="False" Font-Overline="False" OnClick="Button1_Click" Text="Submit" Width="113px" />
                         </asp:Panel>
                     </asp:Panel>
-                    <asp:Panel ID="Panel4" runat="server" CssClass="panel4">
-                        
-                         <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+                    <asp:Panel ID="Panel4" runat="server" CssClass="panel4" Height="335px" Width="611px">
+                        <asp:Label ID="Label8" runat="server" Text="" ></asp:Label>
                         <br />
                         <br />
-                        <br />
-                        
                         <asp:Label ID="Label4" runat="server" Font-Size="Large"></asp:Label>
-                       
+                        <br />
+                        <br />
+                        <asp:Image ID="Image2" runat="server" Height="268px" style="margin-top: 0px" Width="483px" />
                     </asp:Panel>
-                    
-                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                    <asp:Panel ID="Panel5" runat="server" Height="224px" style="margin-left: 8px; margin-top: 2px" Width="1112px" CssClass="panel5">
+                        <asp:Label ID="Label7" runat="server" Text=""></asp:Label>
+                    </asp:Panel>
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />
-                    <br />
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </asp:Panel>
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
     </form>
 </body>
