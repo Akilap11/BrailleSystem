@@ -79,6 +79,7 @@ namespace BrailleSystem
                 double result = brailleService.CalculateCircleArea(Convert.ToDouble(hight));
                 Label4.Text = result.ToString();
                 Label8.Text = "Circle";
+                Image2.ImageUrl = "circle.png";
             }
 
             if (shape == "Triangle")
@@ -86,6 +87,7 @@ namespace BrailleSystem
                 double result = brailleService.CalculateTriangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
                 Label4.Text = result.ToString();
                 Label8.Text = "Triangle";
+                Image2.ImageUrl = "triangle.png";
             }
 
             if (shape == "Rectangle")
@@ -93,6 +95,7 @@ namespace BrailleSystem
                 double result = brailleService.CalculateRectangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
                 Label4.Text = result.ToString();
                 Label8.Text = "Rectangle";
+                Image2.ImageUrl = "https://th.bing.com/th/id/R.33dcf6fb771af1c13e82563172b4bcb1?rik=hp0FGNMmz2ORYA&riu=http%3a%2f%2f2.bp.blogspot.com%2f-SFCKPO4--EQ%2fT38jYg5y6mI%2fAAAAAAAAEJQ%2fKSO58dFXynE%2fs1600%2fPicture1.png&ehk=TJFkGMm1V4BEVqCURDXnQ9f%2f291yhnUDO1HXA1lv4C0%3d&risl=&pid=ImgRaw&r=0";
             }
 
 
