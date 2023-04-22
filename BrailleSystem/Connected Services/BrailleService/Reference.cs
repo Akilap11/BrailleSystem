@@ -32,6 +32,81 @@ namespace BrailleSystem.BrailleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateTriangleArea", ReplyAction="*")]
         System.Threading.Tasks.Task<double> CalculateTriangleAreaAsync(double baseLength, double height);
+        
+        // CODEGEN: Generating message contract since element name text from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConvertToBraille", ReplyAction="*")]
+        BrailleSystem.BrailleService.ConvertToBrailleResponse ConvertToBraille(BrailleSystem.BrailleService.ConvertToBrailleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConvertToBraille", ReplyAction="*")]
+        System.Threading.Tasks.Task<BrailleSystem.BrailleService.ConvertToBrailleResponse> ConvertToBrailleAsync(BrailleSystem.BrailleService.ConvertToBrailleRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConvertToBrailleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConvertToBraille", Namespace="http://tempuri.org/", Order=0)]
+        public BrailleSystem.BrailleService.ConvertToBrailleRequestBody Body;
+        
+        public ConvertToBrailleRequest() {
+        }
+        
+        public ConvertToBrailleRequest(BrailleSystem.BrailleService.ConvertToBrailleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ConvertToBrailleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string text;
+        
+        public ConvertToBrailleRequestBody() {
+        }
+        
+        public ConvertToBrailleRequestBody(string text) {
+            this.text = text;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConvertToBrailleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConvertToBrailleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BrailleSystem.BrailleService.ConvertToBrailleResponseBody Body;
+        
+        public ConvertToBrailleResponse() {
+        }
+        
+        public ConvertToBrailleResponse(BrailleSystem.BrailleService.ConvertToBrailleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ConvertToBrailleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ConvertToBrailleResult;
+        
+        public ConvertToBrailleResponseBody() {
+        }
+        
+        public ConvertToBrailleResponseBody(string ConvertToBrailleResult) {
+            this.ConvertToBrailleResult = ConvertToBrailleResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +158,31 @@ namespace BrailleSystem.BrailleService {
         
         public System.Threading.Tasks.Task<double> CalculateTriangleAreaAsync(double baseLength, double height) {
             return base.Channel.CalculateTriangleAreaAsync(baseLength, height);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BrailleSystem.BrailleService.ConvertToBrailleResponse BrailleSystem.BrailleService.BrailleServiceSoap.ConvertToBraille(BrailleSystem.BrailleService.ConvertToBrailleRequest request) {
+            return base.Channel.ConvertToBraille(request);
+        }
+        
+        public string ConvertToBraille(string text) {
+            BrailleSystem.BrailleService.ConvertToBrailleRequest inValue = new BrailleSystem.BrailleService.ConvertToBrailleRequest();
+            inValue.Body = new BrailleSystem.BrailleService.ConvertToBrailleRequestBody();
+            inValue.Body.text = text;
+            BrailleSystem.BrailleService.ConvertToBrailleResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).ConvertToBraille(inValue);
+            return retVal.Body.ConvertToBrailleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BrailleSystem.BrailleService.ConvertToBrailleResponse> BrailleSystem.BrailleService.BrailleServiceSoap.ConvertToBrailleAsync(BrailleSystem.BrailleService.ConvertToBrailleRequest request) {
+            return base.Channel.ConvertToBrailleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.ConvertToBrailleResponse> ConvertToBrailleAsync(string text) {
+            BrailleSystem.BrailleService.ConvertToBrailleRequest inValue = new BrailleSystem.BrailleService.ConvertToBrailleRequest();
+            inValue.Body = new BrailleSystem.BrailleService.ConvertToBrailleRequestBody();
+            inValue.Body.text = text;
+            return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).ConvertToBrailleAsync(inValue);
         }
     }
 }

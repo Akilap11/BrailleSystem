@@ -46,6 +46,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ConvertToBraille">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertToBrailleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertToBrailleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CalculateRectangleAreaSoapIn">
@@ -66,6 +80,12 @@
   <wsdl:message name="CalculateTriangleAreaSoapOut">
     <wsdl:part name="parameters" element="tns:CalculateTriangleAreaResponse" />
   </wsdl:message>
+  <wsdl:message name="ConvertToBrailleSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertToBraille" />
+  </wsdl:message>
+  <wsdl:message name="ConvertToBrailleSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertToBrailleResponse" />
+  </wsdl:message>
   <wsdl:portType name="BrailleServiceSoap">
     <wsdl:operation name="CalculateRectangleArea">
       <wsdl:input message="tns:CalculateRectangleAreaSoapIn" />
@@ -78,6 +98,10 @@
     <wsdl:operation name="CalculateTriangleArea">
       <wsdl:input message="tns:CalculateTriangleAreaSoapIn" />
       <wsdl:output message="tns:CalculateTriangleAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToBraille">
+      <wsdl:input message="tns:ConvertToBrailleSoapIn" />
+      <wsdl:output message="tns:ConvertToBrailleSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BrailleServiceSoap" type="tns:BrailleServiceSoap">
@@ -109,6 +133,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ConvertToBraille">
+      <soap:operation soapAction="http://tempuri.org/ConvertToBraille" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BrailleServiceSoap12" type="tns:BrailleServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -132,6 +165,15 @@
     </wsdl:operation>
     <wsdl:operation name="CalculateTriangleArea">
       <soap12:operation soapAction="http://tempuri.org/CalculateTriangleArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToBraille">
+      <soap12:operation soapAction="http://tempuri.org/ConvertToBraille" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

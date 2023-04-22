@@ -68,7 +68,8 @@ namespace BrailleSystem
         {
             //get parameters fromthe form and pass them to the web service
             string shape = DropDownList1.Text;
-            
+            string text = DropDownList4.Text;
+
             string hight = TextBox1.Text;
             string width = TextBox2.Text;
             // call the web service
@@ -98,6 +99,162 @@ namespace BrailleSystem
                 Image2.ImageUrl = "https://th.bing.com/th/id/R.33dcf6fb771af1c13e82563172b4bcb1?rik=hp0FGNMmz2ORYA&riu=http%3a%2f%2f2.bp.blogspot.com%2f-SFCKPO4--EQ%2fT38jYg5y6mI%2fAAAAAAAAEJQ%2fKSO58dFXynE%2fs1600%2fPicture1.png&ehk=TJFkGMm1V4BEVqCURDXnQ9f%2f291yhnUDO1HXA1lv4C0%3d&risl=&pid=ImgRaw&r=0";
             }
 
+
+            if (text == "A")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "B")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            if (text == "C")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            if (text == "D")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            if (text == "A")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            if (text == "E")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            if (text == "F")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            if (text == "G")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            if (text == "H")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "I")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "J")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "K")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "L")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "M")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "N")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "O")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "P")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "Q")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "R")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "S")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "T")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "U")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "V")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "W")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "X")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "Y")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+
+            if (text == "Z")
+            {
+                string result = brailleService.ConvertToBraille(text);
+                Label4.Text = result.ToString();
+            }
+            
 
 
 
