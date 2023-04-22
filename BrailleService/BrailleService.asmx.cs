@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BrailleService
 {
@@ -164,7 +165,33 @@ namespace BrailleService
 
             return braille;
         }
+        
 
+         [WebMethod(enableSession: true)]
+
+        public List<string> GetBrailleHistory()
+        {
+            if (Session["BrailleHistory"] == null)
+            {
+                Session["BrailleHistory"] = new List<string>();
+            }
+
+            return (List<string>)Session["BrailleHistory"];
+        }
+
+        [WebMethod(enableSession: true)]
+
+        public void AddToBrailleHistory(string text)
+        {
+            if (Session["BrailleHistory"] == null)
+            {
+                Session["BrailleHistory"] = new List<string>();
+            }
+
+            List<string> brailleHistory = (List<string>)Session["BrailleHistory"];
+            brailleHistory.Add(text);
+            Session["BrailleHistory"] = brailleHistory;
+        }
     }
 
 }

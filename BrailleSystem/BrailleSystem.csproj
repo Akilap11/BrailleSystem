@@ -109,6 +109,15 @@
     <Content Include="Connected Services\BrailleService\BrailleSystem.BrailleService.ConvertToBrailleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\BrailleService\BrailleSystem.BrailleService.AddToBrailleHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BrailleService\BrailleSystem.BrailleService.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BrailleService\BrailleSystem.BrailleService.GetBrailleHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\BrailleService\configuration91.svcinfo" />
     <None Include="Connected Services\BrailleService\configuration.svcinfo" />
     <None Include="Connected Services\BrailleService\Reference.svcmap">

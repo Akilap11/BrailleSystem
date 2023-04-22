@@ -114,14 +114,14 @@
                             <br />
                             <div cssclass="dropdowns">
                                 &nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" BackColor="White" CssClass="dropdown" Font-Size="12pt" Height="39px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" style="margin-bottom: 7px; margin-left: 0px; margin-top: 0px;" Width="196px">
-                                    <asp:ListItem>Select</asp:ListItem>
+                                    <asp:ListItem>Shape</asp:ListItem>
                                     <asp:ListItem>Circle</asp:ListItem>
                                     <asp:ListItem>Triangle</asp:ListItem>
                                     <asp:ListItem>Rectangle</asp:ListItem>
                                 </asp:DropDownList>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:DropDownList ID="DropDownList4" runat="server" AutoPostBack="True" CssClass="dropdown" Font-Size="12pt" Height="39px" style="margin-top: 0px" Width="196px">
-                                    <asp:ListItem>Select</asp:ListItem>
+                                    <asp:ListItem>Characters</asp:ListItem>
                                     <asp:ListItem>A</asp:ListItem>
                                     <asp:ListItem>B</asp:ListItem>
                                     <asp:ListItem>C</asp:ListItem>
@@ -198,6 +198,7 @@
                     <asp:Panel ID="Panel5" runat="server" Height="201px" style="margin-left: 7px; margin-top: 6px" Width="1438px" CssClass="panel5">
                         <br />
                         <asp:Label ID="Label9" runat="server" Text="History"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
                     </asp:Panel>
                 </asp:Panel>
             <br />

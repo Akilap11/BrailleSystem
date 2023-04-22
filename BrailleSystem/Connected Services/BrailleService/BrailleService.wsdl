@@ -60,6 +60,31 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetBrailleHistory">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBrailleHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBrailleHistoryResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddToBrailleHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToBrailleHistoryResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CalculateRectangleAreaSoapIn">
@@ -86,6 +111,18 @@
   <wsdl:message name="ConvertToBrailleSoapOut">
     <wsdl:part name="parameters" element="tns:ConvertToBrailleResponse" />
   </wsdl:message>
+  <wsdl:message name="GetBrailleHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetBrailleHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetBrailleHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetBrailleHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToBrailleHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:AddToBrailleHistory" />
+  </wsdl:message>
+  <wsdl:message name="AddToBrailleHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:AddToBrailleHistoryResponse" />
+  </wsdl:message>
   <wsdl:portType name="BrailleServiceSoap">
     <wsdl:operation name="CalculateRectangleArea">
       <wsdl:input message="tns:CalculateRectangleAreaSoapIn" />
@@ -102,6 +139,14 @@
     <wsdl:operation name="ConvertToBraille">
       <wsdl:input message="tns:ConvertToBrailleSoapIn" />
       <wsdl:output message="tns:ConvertToBrailleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrailleHistory">
+      <wsdl:input message="tns:GetBrailleHistorySoapIn" />
+      <wsdl:output message="tns:GetBrailleHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToBrailleHistory">
+      <wsdl:input message="tns:AddToBrailleHistorySoapIn" />
+      <wsdl:output message="tns:AddToBrailleHistorySoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BrailleServiceSoap" type="tns:BrailleServiceSoap">
@@ -142,6 +187,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetBrailleHistory">
+      <soap:operation soapAction="http://tempuri.org/GetBrailleHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToBrailleHistory">
+      <soap:operation soapAction="http://tempuri.org/AddToBrailleHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BrailleServiceSoap12" type="tns:BrailleServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -174,6 +237,24 @@
     </wsdl:operation>
     <wsdl:operation name="ConvertToBraille">
       <soap12:operation soapAction="http://tempuri.org/ConvertToBraille" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrailleHistory">
+      <soap12:operation soapAction="http://tempuri.org/GetBrailleHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToBrailleHistory">
+      <soap12:operation soapAction="http://tempuri.org/AddToBrailleHistory" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

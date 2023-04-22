@@ -303,13 +303,13 @@ namespace BrailleSystem
                 Label8.Text = "Z";
                 Image2.ImageUrl = "";
             }
-            
 
 
 
 
 
 
+            GridView1.DataSource = brailleService.GetBrailleHistory();
 
 
 
@@ -318,5 +318,7 @@ namespace BrailleSystem
 
 
         }
+
+       
     }
 }
