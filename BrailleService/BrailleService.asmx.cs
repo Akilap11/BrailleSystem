@@ -20,17 +20,48 @@ namespace BrailleService
     // [System.Web.Script.Services.ScriptService]
     public class BrailleService : System.Web.Services.WebService
     {
-        [WebMethod]
+        [WebMethod(EnableSession = true)]
         public double CalculateRectangleArea(double hight, double width)
         {
+            List<string> calculations;
+
+            if (Session["Calculations"] == null)
+            {
+                calculations = new List<string>();
+            }
+            else
+            {
+                calculations = (List<string>)Session["Calculations"];
+            }
+
+            string strRecenetCalculation = hight.ToString() + "*" + width.ToString() + "=" + (hight * width).ToString();
+            calculations.Add(strRecenetCalculation);
+            Session["Calculations"] = calculations;
+
+            //method
             Console.WriteLine("Hight: " + hight);
             Console.WriteLine("Width: " + width);
             return hight * width;
+        }
+        [WebMethod(EnableSession = true)]
+        public List<string> GetCalculations()
+        {
+            if (Session["Calculations"] == null)
+            {
+                List<string> calculations = new List<string>();
+                calculations.Add("You havent performed any calculations yet");
+                return calculations;
+            }
+            else
+            {
+                return (List<string>)Session["calculations"];
+            }
         }
 
         [WebMethod]
         public double CalculateCircleArea(double radius)
         {
+            //method
             Console.WriteLine("Radius: " + radius);
             return Math.PI * radius * radius;
         }
@@ -38,6 +69,7 @@ namespace BrailleService
         [WebMethod]
         public double CalculateTriangleArea(double baseLength, double height)
         {
+            //method
             Console.WriteLine("Base Length: " + baseLength);
             return 0.5 * baseLength * height;
         }
@@ -165,33 +197,7 @@ namespace BrailleService
 
             return braille;
         }
-        
-
-         [WebMethod(enableSession: true)]
-
-        public List<string> GetBrailleHistory()
-        {
-            if (Session["BrailleHistory"] == null)
-            {
-                Session["BrailleHistory"] = new List<string>();
-            }
-
-            return (List<string>)Session["BrailleHistory"];
-        }
-
-        [WebMethod(enableSession: true)]
-
-        public void AddToBrailleHistory(string text)
-        {
-            if (Session["BrailleHistory"] == null)
-            {
-                Session["BrailleHistory"] = new List<string>();
-            }
-
-            List<string> brailleHistory = (List<string>)Session["BrailleHistory"];
-            brailleHistory.Add(text);
-            Session["BrailleHistory"] = brailleHistory;
-        }
     }
+    
 
 }

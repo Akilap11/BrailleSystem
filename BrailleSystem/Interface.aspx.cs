@@ -305,13 +305,8 @@ namespace BrailleSystem
             }
 
 
-
-
-
-
-            GridView1.DataSource = brailleService.GetBrailleHistory();
-
-
+            GridView2.DataSource = brailleService.GetCalculations();
+            GridView2.DataBind();
 
 
 

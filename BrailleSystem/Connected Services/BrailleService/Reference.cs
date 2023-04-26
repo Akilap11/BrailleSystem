@@ -30,6 +30,13 @@ namespace BrailleSystem.BrailleService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateRectangleArea", ReplyAction="*")]
         System.Threading.Tasks.Task<double> CalculateRectangleAreaAsync(double hight, double width);
         
+        // CODEGEN: Generating message contract since element name GetCalculationsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCalculations", ReplyAction="*")]
+        BrailleSystem.BrailleService.GetCalculationsResponse GetCalculations(BrailleSystem.BrailleService.GetCalculationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCalculations", ReplyAction="*")]
+        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetCalculationsResponse> GetCalculationsAsync(BrailleSystem.BrailleService.GetCalculationsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateCircleArea", ReplyAction="*")]
         double CalculateCircleArea(double radius);
         
@@ -48,20 +55,67 @@ namespace BrailleSystem.BrailleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConvertToBraille", ReplyAction="*")]
         System.Threading.Tasks.Task<BrailleSystem.BrailleService.ConvertToBrailleResponse> ConvertToBrailleAsync(BrailleSystem.BrailleService.ConvertToBrailleRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCalculationsRequest {
         
-        // CODEGEN: Generating message contract since element name GetBrailleHistoryResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBrailleHistory", ReplyAction="*")]
-        BrailleSystem.BrailleService.GetBrailleHistoryResponse GetBrailleHistory(BrailleSystem.BrailleService.GetBrailleHistoryRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCalculations", Namespace="http://tempuri.org/", Order=0)]
+        public BrailleSystem.BrailleService.GetCalculationsRequestBody Body;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBrailleHistory", ReplyAction="*")]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleHistoryResponse> GetBrailleHistoryAsync(BrailleSystem.BrailleService.GetBrailleHistoryRequest request);
+        public GetCalculationsRequest() {
+        }
         
-        // CODEGEN: Generating message contract since element name text from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddToBrailleHistory", ReplyAction="*")]
-        BrailleSystem.BrailleService.AddToBrailleHistoryResponse AddToBrailleHistory(BrailleSystem.BrailleService.AddToBrailleHistoryRequest request);
+        public GetCalculationsRequest(BrailleSystem.BrailleService.GetCalculationsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetCalculationsRequestBody {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddToBrailleHistory", ReplyAction="*")]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.AddToBrailleHistoryResponse> AddToBrailleHistoryAsync(BrailleSystem.BrailleService.AddToBrailleHistoryRequest request);
+        public GetCalculationsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCalculationsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCalculationsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BrailleSystem.BrailleService.GetCalculationsResponseBody Body;
+        
+        public GetCalculationsResponse() {
+        }
+        
+        public GetCalculationsResponse(BrailleSystem.BrailleService.GetCalculationsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetCalculationsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BrailleSystem.BrailleService.ArrayOfString GetCalculationsResult;
+        
+        public GetCalculationsResponseBody() {
+        }
+        
+        public GetCalculationsResponseBody(BrailleSystem.BrailleService.ArrayOfString GetCalculationsResult) {
+            this.GetCalculationsResult = GetCalculationsResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -132,128 +186,6 @@ namespace BrailleSystem.BrailleService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetBrailleHistoryRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBrailleHistory", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.GetBrailleHistoryRequestBody Body;
-        
-        public GetBrailleHistoryRequest() {
-        }
-        
-        public GetBrailleHistoryRequest(BrailleSystem.BrailleService.GetBrailleHistoryRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class GetBrailleHistoryRequestBody {
-        
-        public GetBrailleHistoryRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetBrailleHistoryResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBrailleHistoryResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.GetBrailleHistoryResponseBody Body;
-        
-        public GetBrailleHistoryResponse() {
-        }
-        
-        public GetBrailleHistoryResponse(BrailleSystem.BrailleService.GetBrailleHistoryResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetBrailleHistoryResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BrailleSystem.BrailleService.ArrayOfString GetBrailleHistoryResult;
-        
-        public GetBrailleHistoryResponseBody() {
-        }
-        
-        public GetBrailleHistoryResponseBody(BrailleSystem.BrailleService.ArrayOfString GetBrailleHistoryResult) {
-            this.GetBrailleHistoryResult = GetBrailleHistoryResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AddToBrailleHistoryRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddToBrailleHistory", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.AddToBrailleHistoryRequestBody Body;
-        
-        public AddToBrailleHistoryRequest() {
-        }
-        
-        public AddToBrailleHistoryRequest(BrailleSystem.BrailleService.AddToBrailleHistoryRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class AddToBrailleHistoryRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string text;
-        
-        public AddToBrailleHistoryRequestBody() {
-        }
-        
-        public AddToBrailleHistoryRequestBody(string text) {
-            this.text = text;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AddToBrailleHistoryResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddToBrailleHistoryResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BrailleSystem.BrailleService.AddToBrailleHistoryResponseBody Body;
-        
-        public AddToBrailleHistoryResponse() {
-        }
-        
-        public AddToBrailleHistoryResponse(BrailleSystem.BrailleService.AddToBrailleHistoryResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class AddToBrailleHistoryResponseBody {
-        
-        public AddToBrailleHistoryResponseBody() {
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface BrailleServiceSoapChannel : BrailleSystem.BrailleService.BrailleServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -287,6 +219,29 @@ namespace BrailleSystem.BrailleService {
         
         public System.Threading.Tasks.Task<double> CalculateRectangleAreaAsync(double hight, double width) {
             return base.Channel.CalculateRectangleAreaAsync(hight, width);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BrailleSystem.BrailleService.GetCalculationsResponse BrailleSystem.BrailleService.BrailleServiceSoap.GetCalculations(BrailleSystem.BrailleService.GetCalculationsRequest request) {
+            return base.Channel.GetCalculations(request);
+        }
+        
+        public BrailleSystem.BrailleService.ArrayOfString GetCalculations() {
+            BrailleSystem.BrailleService.GetCalculationsRequest inValue = new BrailleSystem.BrailleService.GetCalculationsRequest();
+            inValue.Body = new BrailleSystem.BrailleService.GetCalculationsRequestBody();
+            BrailleSystem.BrailleService.GetCalculationsResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetCalculations(inValue);
+            return retVal.Body.GetCalculationsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetCalculationsResponse> BrailleSystem.BrailleService.BrailleServiceSoap.GetCalculationsAsync(BrailleSystem.BrailleService.GetCalculationsRequest request) {
+            return base.Channel.GetCalculationsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetCalculationsResponse> GetCalculationsAsync() {
+            BrailleSystem.BrailleService.GetCalculationsRequest inValue = new BrailleSystem.BrailleService.GetCalculationsRequest();
+            inValue.Body = new BrailleSystem.BrailleService.GetCalculationsRequestBody();
+            return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetCalculationsAsync(inValue);
         }
         
         public double CalculateCircleArea(double radius) {
@@ -328,53 +283,6 @@ namespace BrailleSystem.BrailleService {
             inValue.Body = new BrailleSystem.BrailleService.ConvertToBrailleRequestBody();
             inValue.Body.text = text;
             return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).ConvertToBrailleAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BrailleSystem.BrailleService.GetBrailleHistoryResponse BrailleSystem.BrailleService.BrailleServiceSoap.GetBrailleHistory(BrailleSystem.BrailleService.GetBrailleHistoryRequest request) {
-            return base.Channel.GetBrailleHistory(request);
-        }
-        
-        public BrailleSystem.BrailleService.ArrayOfString GetBrailleHistory() {
-            BrailleSystem.BrailleService.GetBrailleHistoryRequest inValue = new BrailleSystem.BrailleService.GetBrailleHistoryRequest();
-            inValue.Body = new BrailleSystem.BrailleService.GetBrailleHistoryRequestBody();
-            BrailleSystem.BrailleService.GetBrailleHistoryResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleHistory(inValue);
-            return retVal.Body.GetBrailleHistoryResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleHistoryResponse> BrailleSystem.BrailleService.BrailleServiceSoap.GetBrailleHistoryAsync(BrailleSystem.BrailleService.GetBrailleHistoryRequest request) {
-            return base.Channel.GetBrailleHistoryAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetBrailleHistoryResponse> GetBrailleHistoryAsync() {
-            BrailleSystem.BrailleService.GetBrailleHistoryRequest inValue = new BrailleSystem.BrailleService.GetBrailleHistoryRequest();
-            inValue.Body = new BrailleSystem.BrailleService.GetBrailleHistoryRequestBody();
-            return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetBrailleHistoryAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BrailleSystem.BrailleService.AddToBrailleHistoryResponse BrailleSystem.BrailleService.BrailleServiceSoap.AddToBrailleHistory(BrailleSystem.BrailleService.AddToBrailleHistoryRequest request) {
-            return base.Channel.AddToBrailleHistory(request);
-        }
-        
-        public void AddToBrailleHistory(string text) {
-            BrailleSystem.BrailleService.AddToBrailleHistoryRequest inValue = new BrailleSystem.BrailleService.AddToBrailleHistoryRequest();
-            inValue.Body = new BrailleSystem.BrailleService.AddToBrailleHistoryRequestBody();
-            inValue.Body.text = text;
-            BrailleSystem.BrailleService.AddToBrailleHistoryResponse retVal = ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).AddToBrailleHistory(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.AddToBrailleHistoryResponse> BrailleSystem.BrailleService.BrailleServiceSoap.AddToBrailleHistoryAsync(BrailleSystem.BrailleService.AddToBrailleHistoryRequest request) {
-            return base.Channel.AddToBrailleHistoryAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BrailleSystem.BrailleService.AddToBrailleHistoryResponse> AddToBrailleHistoryAsync(string text) {
-            BrailleSystem.BrailleService.AddToBrailleHistoryRequest inValue = new BrailleSystem.BrailleService.AddToBrailleHistoryRequest();
-            inValue.Body = new BrailleSystem.BrailleService.AddToBrailleHistoryRequestBody();
-            inValue.Body.text = text;
-            return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).AddToBrailleHistoryAsync(inValue);
         }
     }
 }

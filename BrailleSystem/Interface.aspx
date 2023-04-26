@@ -198,7 +198,8 @@
                     <asp:Panel ID="Panel5" runat="server" Height="201px" style="margin-left: 7px; margin-top: 6px" Width="1438px" CssClass="panel5">
                         <br />
                         <asp:Label ID="Label9" runat="server" Text="History"></asp:Label>
-                        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                        <asp:GridView ID="GridView2" runat="server"></asp:GridView>
+
                     </asp:Panel>
                 </asp:Panel>
             <br />
