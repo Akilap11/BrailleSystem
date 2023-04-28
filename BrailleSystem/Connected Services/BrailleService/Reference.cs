@@ -30,13 +30,6 @@ namespace BrailleSystem.BrailleService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateRectangleArea", ReplyAction="*")]
         System.Threading.Tasks.Task<double> CalculateRectangleAreaAsync(double hight, double width);
         
-        // CODEGEN: Generating message contract since element name GetCalculationsResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCalculations", ReplyAction="*")]
-        BrailleSystem.BrailleService.GetCalculationsResponse GetCalculations(BrailleSystem.BrailleService.GetCalculationsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCalculations", ReplyAction="*")]
-        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetCalculationsResponse> GetCalculationsAsync(BrailleSystem.BrailleService.GetCalculationsRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateCircleArea", ReplyAction="*")]
         double CalculateCircleArea(double radius);
         
@@ -48,6 +41,13 @@ namespace BrailleSystem.BrailleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CalculateTriangleArea", ReplyAction="*")]
         System.Threading.Tasks.Task<double> CalculateTriangleAreaAsync(double baseLength, double height);
+        
+        // CODEGEN: Generating message contract since element name GetCalculationsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCalculations", ReplyAction="*")]
+        BrailleSystem.BrailleService.GetCalculationsResponse GetCalculations(BrailleSystem.BrailleService.GetCalculationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCalculations", ReplyAction="*")]
+        System.Threading.Tasks.Task<BrailleSystem.BrailleService.GetCalculationsResponse> GetCalculationsAsync(BrailleSystem.BrailleService.GetCalculationsRequest request);
         
         // CODEGEN: Generating message contract since element name text from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConvertToBraille", ReplyAction="*")]
@@ -221,6 +221,22 @@ namespace BrailleSystem.BrailleService {
             return base.Channel.CalculateRectangleAreaAsync(hight, width);
         }
         
+        public double CalculateCircleArea(double radius) {
+            return base.Channel.CalculateCircleArea(radius);
+        }
+        
+        public System.Threading.Tasks.Task<double> CalculateCircleAreaAsync(double radius) {
+            return base.Channel.CalculateCircleAreaAsync(radius);
+        }
+        
+        public double CalculateTriangleArea(double baseLength, double height) {
+            return base.Channel.CalculateTriangleArea(baseLength, height);
+        }
+        
+        public System.Threading.Tasks.Task<double> CalculateTriangleAreaAsync(double baseLength, double height) {
+            return base.Channel.CalculateTriangleAreaAsync(baseLength, height);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BrailleSystem.BrailleService.GetCalculationsResponse BrailleSystem.BrailleService.BrailleServiceSoap.GetCalculations(BrailleSystem.BrailleService.GetCalculationsRequest request) {
             return base.Channel.GetCalculations(request);
@@ -242,22 +258,6 @@ namespace BrailleSystem.BrailleService {
             BrailleSystem.BrailleService.GetCalculationsRequest inValue = new BrailleSystem.BrailleService.GetCalculationsRequest();
             inValue.Body = new BrailleSystem.BrailleService.GetCalculationsRequestBody();
             return ((BrailleSystem.BrailleService.BrailleServiceSoap)(this)).GetCalculationsAsync(inValue);
-        }
-        
-        public double CalculateCircleArea(double radius) {
-            return base.Channel.CalculateCircleArea(radius);
-        }
-        
-        public System.Threading.Tasks.Task<double> CalculateCircleAreaAsync(double radius) {
-            return base.Channel.CalculateCircleAreaAsync(radius);
-        }
-        
-        public double CalculateTriangleArea(double baseLength, double height) {
-            return base.Channel.CalculateTriangleArea(baseLength, height);
-        }
-        
-        public System.Threading.Tasks.Task<double> CalculateTriangleAreaAsync(double baseLength, double height) {
-            return base.Channel.CalculateTriangleAreaAsync(baseLength, height);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

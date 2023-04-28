@@ -34,7 +34,7 @@ namespace BrailleService
                 calculations = (List<string>)Session["Calculations"];
             }
 
-            string strRecenetCalculation = hight.ToString() + "*" + width.ToString() + "=" + (hight * width).ToString();
+            string strRecenetCalculation = "Required ink for a rectangle: " +(hight * width).ToString() ;
             calculations.Add(strRecenetCalculation);
             Session["Calculations"] = calculations;
 
@@ -43,6 +43,56 @@ namespace BrailleService
             Console.WriteLine("Width: " + width);
             return hight * width;
         }
+       
+
+        [WebMethod(EnableSession = true)]
+        public double CalculateCircleArea(double radius)
+        {
+
+            List<string> calculations;
+
+            if (Session["Calculations"] == null)
+            {
+                calculations = new List<string>();
+            }
+            else
+            {
+                calculations = (List<string>)Session["Calculations"];
+            }
+
+            string strRecenetCalculation = "Required ink for a circle: "+ Math.Round(Math.PI * radius * radius,2) ;
+            calculations.Add(strRecenetCalculation);
+            Session["Calculations"] = calculations;
+
+            //method
+            Console.WriteLine("Radius: " + radius);
+            return Math.Round(Math.PI * radius * radius,2);
+        }
+
+        [WebMethod(EnableSession = true)]
+        public double CalculateTriangleArea(double baseLength, double height)
+        {
+
+            List<string> calculations;
+
+            if (Session["Calculations"] == null)
+            {
+                calculations = new List<string>();
+            }
+            else
+            {
+                calculations = (List<string>)Session["Calculations"];
+            }
+
+            string strRecenetCalculation = "Required ink for a triangle: " + (baseLength * height).ToString();
+            calculations.Add(strRecenetCalculation);
+            Session["Calculations"] = calculations;
+
+            //method
+            Console.WriteLine("Base Length: " + baseLength);
+            return 0.5 * baseLength * height;
+        }
+
         [WebMethod(EnableSession = true)]
         public List<string> GetCalculations()
         {
@@ -58,21 +108,7 @@ namespace BrailleService
             }
         }
 
-        [WebMethod]
-        public double CalculateCircleArea(double radius)
-        {
-            //method
-            Console.WriteLine("Radius: " + radius);
-            return Math.PI * radius * radius;
-        }
 
-        [WebMethod]
-        public double CalculateTriangleArea(double baseLength, double height)
-        {
-            //method
-            Console.WriteLine("Base Length: " + baseLength);
-            return 0.5 * baseLength * height;
-        }
 
         [WebMethod]
 
@@ -197,6 +233,13 @@ namespace BrailleService
 
             return braille;
         }
+
+
+        
+
+
+
+
     }
     
 

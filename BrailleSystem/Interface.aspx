@@ -108,9 +108,8 @@
                             <br />
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label2" runat="server" Text="Select a Shape" Font-Size="X-Large"></asp:Label> 
-                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                            <asp:Label ID="Label10" runat="server" Font-Size="X-Large" Text="Select a Caracter"></asp:Label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br />
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Label ID="Label10" runat="server" Font-Size="X-Large" Text="Select a Character"></asp:Label>
+                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br />
                             <br />
                             <div cssclass="dropdowns">
                                 &nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" BackColor="White" CssClass="dropdown" Font-Size="12pt" Height="39px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" style="margin-bottom: 7px; margin-left: 0px; margin-top: 0px;" Width="196px">
@@ -119,8 +118,7 @@
                                     <asp:ListItem>Triangle</asp:ListItem>
                                     <asp:ListItem>Rectangle</asp:ListItem>
                                 </asp:DropDownList>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:DropDownList ID="DropDownList4" runat="server" AutoPostBack="True" CssClass="dropdown" Font-Size="12pt" Height="39px" style="margin-top: 0px" Width="196px">
+                                &nbsp;&nbsp;&nbsp;<asp:DropDownList ID="DropDownList4" runat="server" AutoPostBack="True" CssClass="dropdown" Font-Size="12pt" Height="39px" style="margin-top: 0px" Width="196px">
                                     <asp:ListItem>Characters</asp:ListItem>
                                     <asp:ListItem>A</asp:ListItem>
                                     <asp:ListItem>B</asp:ListItem>
@@ -149,6 +147,7 @@
                                     <asp:ListItem>Y</asp:ListItem>
                                     <asp:ListItem>Z</asp:ListItem>
                                 </asp:DropDownList>
+                                &nbsp;
                             </div>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <br />

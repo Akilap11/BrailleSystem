@@ -75,7 +75,7 @@ namespace BrailleSystem
             // call the web service
             BrailleService.BrailleServiceSoapClient brailleService = new BrailleService.BrailleServiceSoapClient();
             
-            if (shape == "Circle")
+            if (shape == "Circle" && hight != "")
             {
                 double result = brailleService.CalculateCircleArea(Convert.ToDouble(hight));
                 Label4.Text = result.ToString();
@@ -83,7 +83,7 @@ namespace BrailleSystem
                 Image2.ImageUrl = "https://webstockreview.net/images/dot-clipart-vector-15.png";
             }
 
-            if (shape == "Triangle")
+            else if (shape == "Triangle" && hight != "" && width != "")
             {
                 double result = brailleService.CalculateTriangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
                 Label4.Text = result.ToString();
@@ -91,12 +91,17 @@ namespace BrailleSystem
                 Image2.ImageUrl = "https://i.stack.imgur.com/dfeIy.png";
             }
 
-            if (shape == "Rectangle")
+            else if (shape == "Rectangle" && hight!="" && width!="" )
             {
                 double result = brailleService.CalculateRectangleArea(Convert.ToDouble(hight), Convert.ToDouble(width));
                 Label4.Text = result.ToString();
                 Label8.Text = "Rectangle";
                 Image2.ImageUrl = "https://th.bing.com/th/id/R.33dcf6fb771af1c13e82563172b4bcb1?rik=hp0FGNMmz2ORYA&riu=http%3a%2f%2f2.bp.blogspot.com%2f-SFCKPO4--EQ%2fT38jYg5y6mI%2fAAAAAAAAEJQ%2fKSO58dFXynE%2fs1600%2fPicture1.png&ehk=TJFkGMm1V4BEVqCURDXnQ9f%2f291yhnUDO1HXA1lv4C0%3d&risl=&pid=ImgRaw&r=0";
+            }
+            else
+            {
+                Label8.Text = "Please enter data";
+                Label4.Text = "";
             }
 
 
@@ -304,9 +309,9 @@ namespace BrailleSystem
                 Image2.ImageUrl = "";
             }
 
-
             GridView2.DataSource = brailleService.GetCalculations();
             GridView2.DataBind();
+
 
 
 
