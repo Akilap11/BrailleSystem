@@ -1,6 +1,6 @@
 # BrailleSystem(ASP.NET)
 
-<h2> Using SOAP for create Web Service</h2>
+<h2> Used SOAP for create Web Service</h2>
 <hr> <h3>Contributors</h3> 
 <ul>
 <li> M.A.Sriyanjith</li>
